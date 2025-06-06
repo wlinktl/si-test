@@ -1,0 +1,101 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.example:test >--------------------------
+[INFO] Building si-test 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ test ---
+[INFO] skip non existing resourceDirectory C:\tool\si-test\src\main\resources
+[INFO] skip non existing resourceDirectory C:\tool\si-test\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ test ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 5 source files with javac [debug release 17] to target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ test ---
+[INFO] skip non existing resourceDirectory C:\tool\si-test\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ test ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 2 source files with javac [debug release 17] to target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ test ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.integration.advice.TestAdviceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.295 s -- in com.example.integration.advice.TestAdviceTest
+[INFO] Running com.example.integration.config.FlowConfigTest
+13:27:51.293 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.integration.config.FlowConfigTest]: FlowConfigTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:27:51.486 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.integration.Application for test class com.example.integration.config.FlowConfigTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.0)
+
+2025-06-06T13:27:52.264-04:00  INFO 16148 --- [           main] c.e.integration.config.FlowConfigTest    : Starting FlowConfigTest using Java 21.0.5 with PID 16148 (started by dev in C:\tool\si-test)
+2025-06-06T13:27:52.266-04:00  INFO 16148 --- [           main] c.e.integration.config.FlowConfigTest    : No active profile set, falling back to 1 default profile: "default"
+2025-06-06T13:27:52.916-04:00  INFO 16148 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2025-06-06T13:27:52.928-04:00  INFO 16148 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2025-06-06T13:27:54.017-04:00  INFO 16148 --- [           main] c.e.integration.config.FlowConfigTest    : Started FlowConfigTest in 2.312 seconds (process running for 4.285)
+2025-06-06T13:27:54.029-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2025-06-06T13:27:54.030-04:00  INFO 16148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2025-06-06T13:27:54.031-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2025-06-06T13:27:54.034-04:00  INFO 16148 --- [           main] o.s.i.endpoint.PollingConsumer           : started bean 'fileProcessingFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.fileProcessingFlow()'
+2025-06-06T13:27:54.035-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {bridge} as a subscriber to the 'pubSubFlow.subFlow#0.channel#0' channel
+2025-06-06T13:27:54.036-04:00  INFO 16148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.pubSubFlow.subFlow#0.channel#0' has 1 subscriber(s).
+2025-06-06T13:27:54.036-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'pubSubFlow.subFlow#0.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.pubSubFlow()'
+2025-06-06T13:27:54.036-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {bridge} as a subscriber to the 'pubSubFlow.subFlow#0.channel#0' channel
+2025-06-06T13:27:54.037-04:00  INFO 16148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.pubSubFlow.subFlow#0.channel#0' has 2 subscriber(s).
+2025-06-06T13:27:54.037-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'pubSubFlow.subFlow#1.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.pubSubFlow()'
+2025-06-06T13:27:54.037-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {bridge} as a subscriber to the 'pubSubChannel' channel
+2025-06-06T13:27:54.037-04:00  INFO 16148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.pubSubChannel' has 1 subscriber(s).
+2025-06-06T13:27:54.037-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'pubSubFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.pubSubFlow()'
+2025-06-06T13:27:54.037-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter} as a subscriber to the 'copyToMonitorChannel' channel
+2025-06-06T13:27:54.037-04:00  INFO 16148 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application.copyToMonitorChannel' has 1 subscriber(s).
+2025-06-06T13:27:54.037-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'copyToMonitorFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.copyToMonitorFlow(org.aopalliance.aop.Advice)'
+2025-06-06T13:27:54.038-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {file:outbound-channel-adapter} as a subscriber to the 'moveToPreProcessChannel' channel
+2025-06-06T13:27:54.038-04:00  INFO 16148 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application.moveToPreProcessChannel' has 1 subscriber(s).
+2025-06-06T13:27:54.038-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean 'moveToPreProcessFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.moveToPreProcessFlow(org.aopalliance.aop.Advice)'
+2025-06-06T13:27:54.043-04:00  INFO 16148 --- [           main] o.s.i.e.SourcePollingChannelAdapter      : started bean 'fileInboundFlow.org.springframework.integration.config.SourcePollingChannelAdapterFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.fileInboundFlow()'
+2025-06-06T13:27:54.045-04:00  INFO 16148 --- [           main] o.s.i.endpoint.PollingConsumer           : started bean 'dataProcessingService.processFile.serviceActivator'
+2025-06-06T13:27:56.161-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2025-06-06T13:27:56.161-04:00  INFO 16148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2025-06-06T13:27:56.161-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.endpoint.PollingConsumer           : stopped bean 'fileProcessingFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.fileProcessingFlow()'
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Removing {bridge} as a subscriber to the 'pubSubFlow.subFlow#0.channel#0' channel
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.pubSubFlow.subFlow#0.channel#0' has 1 subscriber(s).
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'pubSubFlow.subFlow#0.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.pubSubFlow()'
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Removing {bridge} as a subscriber to the 'pubSubFlow.subFlow#0.channel#0' channel
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.pubSubFlow.subFlow#0.channel#0' has 0 subscriber(s).
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'pubSubFlow.subFlow#1.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.pubSubFlow()'
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Removing {bridge} as a subscriber to the 'pubSubChannel' channel
+2025-06-06T13:27:56.162-04:00  INFO 16148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.pubSubChannel' has 0 subscriber(s).
+2025-06-06T13:27:56.163-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'pubSubFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.pubSubFlow()'
+2025-06-06T13:27:56.163-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter} as a subscriber to the 'copyToMonitorChannel' channel
+2025-06-06T13:27:56.163-04:00  INFO 16148 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application.copyToMonitorChannel' has 0 subscriber(s).
+2025-06-06T13:27:56.164-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'copyToMonitorFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.copyToMonitorFlow(org.aopalliance.aop.Advice)'
+2025-06-06T13:27:56.164-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Removing {file:outbound-channel-adapter} as a subscriber to the 'moveToPreProcessChannel' channel
+2025-06-06T13:27:56.164-04:00  INFO 16148 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application.moveToPreProcessChannel' has 0 subscriber(s).
+2025-06-06T13:27:56.164-04:00  INFO 16148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : stopped bean 'moveToPreProcessFlow.org.springframework.integration.config.ConsumerEndpointFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.moveToPreProcessFlow(org.aopalliance.aop.Advice)'
+2025-06-06T13:27:56.164-04:00  INFO 16148 --- [           main] o.s.i.e.SourcePollingChannelAdapter      : stopped bean 'fileInboundFlow.org.springframework.integration.config.SourcePollingChannelAdapterFactoryBean#0'; from source: 'com.example.integration.config.FlowConfig.fileInboundFlow()'
+2025-06-06T13:27:56.164-04:00  INFO 16148 --- [           main] o.s.i.endpoint.PollingConsumer           : stopped bean 'dataProcessingService.processFile.serviceActivator'
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.046 s -- in com.example.integration.config.FlowConfigTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.794 s
+[INFO] Finished at: 2025-06-06T13:27:56-04:00
+[INFO] ------------------------------------------------------------------------
